@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return 'hello';
 });
+
+Route::get('viblo/', [UserController::class, 'getUser']);
+
+Route::get('/post/create', [PostController::class, 'create']);
+Route::post('/post', [PostController::class, 'store'])->name('create-post');

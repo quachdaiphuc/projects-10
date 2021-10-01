@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p> Hi {{ $user->name }}</p>
-    <p>Danh sách Bài viết:</p>
-    @foreach($user->posts as $post)
-        <p>Tiêu đề: {{ $post->title }}</p>
-    @endforeach
+    <p>Create new post</p>
+    <form action="{{route('create-post')}}" method="post">
+
+    </form>
+
 </body>
 </html>
